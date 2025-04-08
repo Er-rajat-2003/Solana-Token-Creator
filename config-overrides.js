@@ -1,14 +1,14 @@
-// config-overrides.js
 const webpack = require('webpack');
 
 module.exports = function override(config) {
     config.resolve.fallback = {
         ...config.resolve.fallback,
-        stream: require.resolve("stream-browserify"),
-        buffer: require.resolve("buffer"),
-        crypto: require.resolve("crypto-browserify"),
-        https: require.resolve("https-browserify"),
-        url: require.resolve("url/"),
+        buffer: require.resolve('buffer/'),
+        stream: require.resolve('stream-browserify'),
+        crypto: require.resolve('crypto-browserify'),
+        https: require.resolve('https-browserify'),
+        url: require.resolve('url/'),
+        path: require.resolve('path-browserify'),
     };
 
     config.plugins = [
