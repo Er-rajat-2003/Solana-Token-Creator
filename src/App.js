@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState,useCallback } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { createMint, getOrCreateAssociatedTokenAccount, mintTo, transfer, getAccount } from '@solana/spl-token';
@@ -18,7 +18,7 @@ const App = () => {
   const [creatorBalance, setCreatorBalance] = useState(0);
   const [recipientBalance, setRecipientBalance] = useState(null);
 
-  const { publicKey, signTransaction } = useWallet();
+  const { publicKey} = useWallet();
   const connection = new Connection(clusterApiUrl('devnet'), 'confirmed');
 
   const handleCreateToken = async () => {
