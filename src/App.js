@@ -15,6 +15,7 @@ const App = () => {
   const [recipient, setRecipient] = useState('');
   const [transferAmount, setTransferAmount] = useState('');
   const [loading, setLoading] = useState(false);
+  
   const [creatorBalance, setCreatorBalance] = useState(0);
   const [recipientBalance, setRecipientBalance] = useState(null);
 
@@ -184,7 +185,7 @@ const App = () => {
 
         <footer style={{ marginTop: 60, fontSize: 13, color: '#94a3b8', lineHeight: '1.6' }}>
           <div>© 2025 Rajat Varshney</div>
-          <div>Founder, <strong style={{ color: '#38bdf8' }}>Systemic Altruism</strong> & <strong style={{ color: '#a78bfa' }}>Persist Ventures</strong></div>
+          <div>Assignment, <strong style={{ color: '#38bdf8' }}>Systemic Altruism</strong> & <strong style={{ color: '#a78bfa' }}>Persist Ventures</strong></div>
         </footer>
       </div>
     </div>
