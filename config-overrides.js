@@ -50,5 +50,8 @@ module.exports = function override(config) {
     });
   }
 
+  // Disable source maps entirely
+  config.devtool = false;
+
   return config;
 };
