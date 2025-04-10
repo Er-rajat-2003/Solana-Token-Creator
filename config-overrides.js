@@ -23,7 +23,7 @@ module.exports = function override(config) {
       Buffer: ['buffer', 'Buffer'],
       process: 'process/browser',
     }),
-    new NodePolyfillPlugin(),
+    new NodePolyfillPlugin(), // Add NodePolyfillPlugin
   ];
 
   // Disable the source-map-loader entirely for certain modules
@@ -39,9 +39,12 @@ module.exports = function override(config) {
       ...(sourceMapRule.exclude || []),
       /node_modules\/@metamask\/utils\/node_modules\/superstruct/,
       /node_modules\/@fractalwagmi\/solana-wallet-adapter/,
+      /node_modules\/@trezor\/schema-utils/,
+      /node_modules\/@trezor\/transport/,
+      /node_modules\/@trezor\/utils/,
     ];
 
-    // Optional: Disable source-map-loader entirely (in case the above exclusion doesn't work)
+    // Optional: Disable source-map-loader entirely (if exclusion doesn't work)
     config.module.rules = config.module.rules.filter((rule) => {
       return !(rule.use && rule.use.some((u) => u.loader === 'source-map-loader'));
     });
